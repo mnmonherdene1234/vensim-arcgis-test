@@ -1,0 +1,128 @@
+{UTF-8}
+get sick=
+	infection fraction*healthy*sick
+	~	
+	~		|
+
+total poulation=
+	healthy+sick
+	~	
+	~		|
+
+healthy= INTEG (
+	-get sick,
+		1000)
+	~	
+	~		|
+
+infection fraction=
+	0.001
+	~	 [0,0.005,0.0001]
+	~		|
+
+sick= INTEG (
+	get sick,
+		1)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 30
+	~	Day [1,30,1]
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Day
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Day [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.03125
+	~	Day [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+10,1,healthy,128,96,40,20,3,3,0,0,0,0,0,0
+10,2,sick,327,98,40,20,3,3,0,0,0,0,0,0
+1,3,5,2,4,0,0,22,0,0,0,-1--1--1,,1|(259,98)|
+1,4,5,1,100,0,0,22,0,0,0,-1--1--1,,1|(193,98)|
+11,5,188,225,98,6,8,34,3,0,0,1,0,0,0
+10,6,get sick,225,114,21,8,40,3,0,0,-1,0,0,0
+10,7,infection fraction,121,239,44,8,8,3,0,0,0,0,0,0
+1,8,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(168,154)|
+1,9,2,6,1,0,0,0,0,64,0,-1--1--1,,1|(282,157)|
+1,10,7,6,1,0,0,0,0,64,0,-1--1--1,,1|(191,205)|
+12,11,0,762,252,115,124,3,188,0,0,1,0,0,0
+Population
+12,12,0,500,267,105,140,3,188,0,0,1,0,0,0
+My_People
+10,13,total poulation,184,437,37,8,8,3,0,0,0,0,0,0
+10,14,healthy,56,397,27,8,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,15,sick,49,466,19,8,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,16,14,13,0,0,0,0,0,64,0,-1--1--1,,1|(112,414)|
+1,17,15,13,0,0,0,0,0,64,0,-1--1--1,,1|(100,454)|
+10,18,FINAL TIME,575,35,43,8,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+///---\\\
+:GRAPH Population
+:TITLE Population
+:X-AXIS Time
+:X-DIV 12
+:Y-DIV 15
+:SCALE
+:VAR healthy
+:Y-MIN 0
+:Y-MAX 1200
+:LINE-WIDTH 2
+:VAR sick
+:Y-MIN 0
+:Y-MAX 1200
+:LINE-WIDTH 2
+
+:TABLE My_People
+:TITLE My People
+:PRETTYNUM
+:X-MIN 0
+:X-MAX 30
+:TIME-DOWN
+:FIRST-CELLWIDTH 10
+:CELLWIDTH 10
+:FONT Times New Roman|12||0-0-0
+:VAR healthy
+:VAR sick
+:L<%^E!@
+1:Current.vdf
+1:/Applications/Current.vdf
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:2,
+34:0,
+4:Time
+5:FINAL TIME
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:0
+24:0
+25:30
+26:30
